@@ -2,6 +2,8 @@ import './App.css'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import ListaProdutos from './componentes/ListaProdutos'
+import { array } from 'prop-types'
+import CardProduto from './componentes/CardProduto'
 
 function App() {
   //1ª renderize a lista de produtos contendo 3 produtos
@@ -35,16 +37,28 @@ function App() {
       ]*/
   
         const [produtos, setProdutos] = useState([])
+        const [produtoBusca, setProdutoBusca] = useState({})
+        const [id, setId] = useState(1)
 
 
   // 3º usando o hook useEffect faça um get na API fake store api, trazendo TODOS os produtos e armazene na variável produtos
 
-  useEffect() // primeiro parâmetro: função, segundo parâmetro: array de dependências
+  useEffect(()=>{
+    fetch('https://fakestoreapi.com/products')
+    .then(resp => resp.json())
+    .then(arrayDeProdutos => setProdutos(arrayDeProdutos))
+    .then(console.log(produtos))
+    .catch(erro => console.log(erro.message))
+  }, []) 
 
 
-
-
-
+  // 4º usando o hook useEffect faça um get na API fake store api, trazendo o produto pelo id e armazene na variável produtoBusca
+  useEffect(()=>{
+    //https://fakestoreapi.com/products/{id}
+  } , [id])
+ 
+  
+  // primeiro parâmetro: função, segundo parâmetro: array de dependências
 
 
   return (
@@ -53,6 +67,13 @@ function App() {
       <h1>Aula 21</h1>
 
       <ListaProdutos produtos={produtos} />
+
+
+      <h1>Pesquisar Produto</h1>
+
+      
+
+      <CardProduto titulo={busca.title} descricao={busca.description} preco={busca.price} imagem={busca.image}/>
       
     </>
   )

@@ -1,5 +1,5 @@
 import CardProduto from "./CardProduto";
-
+//[{},{},{}]
 
 function ListaProdutos({produtos}){
 
@@ -10,10 +10,10 @@ function ListaProdutos({produtos}){
                     return(
                         <CardProduto 
                             key={item.id} 
-                            titulo={item.titulo} 
-                            descricao={item.descricao} 
-                            preco={item.preco} 
-                            imagem={item.imagem}
+                            titulo={item.title} 
+                            descricao={item.description} 
+                            preco={item.price} 
+                            imagem={item.image}
                         />
                     )
                 })

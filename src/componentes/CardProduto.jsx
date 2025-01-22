@@ -12,7 +12,7 @@ function CardProduto({titulo, descricao, preco, imagem}){
 
     return(
 
-        <div className="card" style={{width: "18rem;"}}>
+        <div className="card" style={{width: '18rem'}}>
         <img src={imagem} className="card-img-top" alt={titulo} />
         <div className="card-body">
             <h5 className="card-title">{titulo}</h5>
