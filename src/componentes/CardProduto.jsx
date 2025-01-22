@@ -8,12 +8,12 @@
 //essas informações deverão ser recebidas como props
 
 
-function CardProduto({titulo, descricao, preco, img}){
+function CardProduto({titulo, descricao, preco, imagem}){
 
     return(
 
         <div className="card" style={{width: "18rem;"}}>
-        <img src={img} className="card-img-top" alt={titulo} />
+        <img src={imagem} className="card-img-top" alt={titulo} />
         <div className="card-body">
             <h5 className="card-title">{titulo}</h5>
             <p className="card-text">{descricao}.</p>

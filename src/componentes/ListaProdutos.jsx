@@ -13,7 +13,7 @@ function ListaProdutos({produtos}){
                             titulo={item.titulo} 
                             descricao={item.descricao} 
                             preco={item.preco} 
-                            img={item.img}
+                            imagem={item.imagem}
                         />
                     )
                 })
